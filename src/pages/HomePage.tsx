@@ -7,10 +7,18 @@ import ProductCard from '../components/ui/ProductCard';
 import GoogleAdSense from '../components/ads/GoogleAdSense';
 import { CATEGORIES } from '../data/categories';
 import { FEATURED_PRODUCTS, TRENDING_PRODUCTS, LATEST_PRODUCTS } from '../data/products';
+import SEO from '../components/utils/SEO';
 
 const HomePage: React.FC = () => {
   return (
     <div>
+      <SEO
+        title="HoodaGoods - Honest Product Reviews & Comparisons | Find Best Products"
+        description="Unbiased product reviews and comparisons. Discover top-rated products in business, health, technology, and more. Make informed purchasing decisions with HoodaGoods."
+        keywords="product reviews, product comparisons, best products, unbiased reviews"
+        ogTitle="HoodaGoods - Honest Product Reviews & Comparisons"
+        ogDescription="Unbiased product reviews and comparisons. Discover top-rated products in business, health, technology, and more."
+      />
       {/* Hero Section */}
       <Hero 
         title="Honest Reviews for Informed Decisions" 

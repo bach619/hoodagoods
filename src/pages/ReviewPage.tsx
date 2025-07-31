@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Star, ShoppingCart, Share2, Bookmark, Award, ExternalLink, Clock, User, TrendingUp, CheckCircle } from 'lucide-react';
+import { Star, ShoppingCart, Share2, Bookmark, Award, Clock, User, TrendingUp, CheckCircle } from 'lucide-react';
 import AffiliateDisclosure from '../components/ui/AffiliateDisclosure';
 import ProsCons from '../components/ui/ProsCons';
 import UserCommentComponent from '../components/ui/UserComment';
 import AdSidebar from '../components/ads/AdSidebar';
 import { PRODUCTS } from '../data/products';
 import { COMMENTS } from '../data/comments';
+import SEO from '../components/utils/SEO';
 
 // Helper function to format price with thousands separator
 const formatPrice = (price: number): string => {
@@ -49,6 +50,13 @@ const ReviewPage: React.FC = () => {
 
   return (
     <div>
+      <SEO
+        title={`${product.name} Review: Complete Analysis & Buying Guide`}
+        description={`Unbiased ${product.name} review. Discover pros, cons, specifications, and where to buy. Make an informed decision with our comprehensive analysis.`}
+        keywords={`${product.name} review, ${product.category} review, ${product.name} pros and cons, ${product.name} specifications`}
+        ogTitle={`${product.name} Review: Complete Analysis & Buying Guide`}
+        ogDescription={`Unbiased ${product.name} review. Discover pros, cons, specifications, and where to buy.`}
+      />
       {/* Article Header */}
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 pt-12 pb-8">
         <div className="container-custom">
@@ -358,6 +366,40 @@ const ReviewPage: React.FC = () => {
                   </div>
                 </section>
               )}
+              
+              {/* Structured Data for SEO */}
+              <script type="application/ld+json">
+                {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Product",
+                  "name": product.name,
+                  "image": product.image,
+                  "description": product.description,
+                  "review": {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": product.rating,
+                      "bestRating": "5"
+                    },
+                    "author": {
+                      "@type": "Organization",
+                      "name": "HoodaGoods"
+                    }
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": product.rating,
+                    "reviewCount": product.reviewCount
+                  },
+                  "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "USD",
+                    "price": product.price,
+                    "url": `https://hoodagoods.com/review/${product.slug}`
+                  }
+                })}
+              </script>
               
               {/* User Reviews */}
               <section className="mb-12">

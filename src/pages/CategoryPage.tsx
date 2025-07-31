@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/utils/SEO';
 import { useParams } from 'react-router-dom';
 import { Filter as FilterIcon } from 'lucide-react';
 
@@ -101,6 +102,13 @@ const CategoryPage: React.FC = () => {
 
   return (
     <div>
+      <SEO
+        title={`${category.name} Products - Reviews & Comparisons | HoodaGoods`}
+        description={`Discover the best ${category.name} products. Unbiased reviews, comparisons, and buying guides to help you choose the right product.`}
+        keywords={`${category.name}, ${category.name} products, best ${category.name}, ${category.name} reviews`}
+        ogTitle={`Best ${category.name} Products - Reviews & Comparisons`}
+        ogDescription={`Unbiased reviews and comparisons of the top ${category.name} products. Find the best ${category.name} for your needs.`}
+      />
       {/* Header Kategori */}
       <div
         className="bg-cover bg-center py-20"

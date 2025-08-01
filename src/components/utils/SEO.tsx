@@ -18,13 +18,13 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords = "product reviews, product comparisons, best products, unbiased reviews",
-  canonical = "https://hoodagoods.com",
+  canonical = "https://hoodagoods.instapure.fun",
   ogTitle,
   ogDescription,
-  ogImage = "https://hoodagoods.com/social-preview.jpg",
+  ogImage = "https://hoodagoods.instapure.fun/social-preview.jpg",
   twitterTitle,
   twitterDescription,
-  twitterImage = "https://hoodagoods.com/social-preview.jpg"
+  twitterImage = "https://hoodagoods.instapure.fun/social-preview.jpg"
 }) => {
   useEffect(() => {
     document.title = title;

@@ -396,7 +396,7 @@ const ReviewPage: React.FC = () => {
                     "@type": "Offer",
                     "priceCurrency": "USD",
                     "price": product.price,
-                    "url": `https://hoodagoods.com/review/${product.slug}`
+                    "url": `https://hoodagoods.instapure.fun/review/${product.slug}`
                   }
                 })}
               </script>

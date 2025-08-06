@@ -1,0 +1,4 @@
+@echo off
+git add netlify.toml
+git commit -m "Add Netlify configuration"
+git push origin main

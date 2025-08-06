@@ -23,7 +23,7 @@ const MainNavigation: React.FC = () => {
       <NavigationMenuList>
         {/* Home Link */}
         <NavigationMenuItem>
-          <Link to="/" legacyBehavior passHref>
+          <Link to="/">
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -63,7 +63,7 @@ const MainNavigation: React.FC = () => {
 
         {/* Compare Link */}
         <NavigationMenuItem>
-          <Link to="/compare" legacyBehavior passHref>
+          <Link to="/compare">
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -78,7 +78,7 @@ const MainNavigation: React.FC = () => {
 
         {/* About Link */}
         <NavigationMenuItem>
-          <Link to="/about" legacyBehavior passHref>
+          <Link to="/about">
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -91,9 +91,24 @@ const MainNavigation: React.FC = () => {
           </Link>
         </NavigationMenuItem>
 
+        {/* Methodology Link */}
+        <NavigationMenuItem>
+          <Link to="/review-methodology">
+            <NavigationMenuLink
+              className={cn(
+                navigationMenuTriggerStyle(),
+                'text-gray-700 hover:text-primary-600 bg-transparent hover:bg-gray-100',
+                isActive('/review-methodology') && 'text-primary-600 bg-gray-100'
+              )}
+            >
+              Methodology
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+
         {/* Contact Link */}
         <NavigationMenuItem>
-          <Link to="/contact" legacyBehavior passHref>
+          <Link to="/contact">
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
